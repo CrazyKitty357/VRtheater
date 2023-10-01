@@ -5,7 +5,7 @@ this is a little project I was working on for 2 days to teach me some stuff abou
 ## PREREQUISITES
 
 ffmpeg | [github](https://github.com/FFmpeg/FFmpeg) [chocolatey (windows)](https://community.chocolatey.org/packages/ffmpeg) [website](https://ffmpeg.org)  
-yt-dlp | [github](https://godotengine.org) [chocolatey (windows)](https://community.chocolatey.org/packages/yt-dlp)  
+yt-dlp | [github](https://github.com/yt-dlp/yt-dlp) [chocolatey (windows)](https://community.chocolatey.org/packages/yt-dlp)  
 godot 4.x | [github](https://github.com/godotengine/godot) [website](https://godotengine.org)  
 a pc vr headset (***optional***) | [Valve Index](https://store.steampowered.com/valveindex), [Quest 2](https://www.meta.com/quest/products/quest-2/), [Pico neo3 link](https://www.picoxr.com/global/products/neo3-link)
 

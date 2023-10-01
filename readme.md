@@ -26,3 +26,15 @@ Just run the included change-video.ps1
 ## How to change the skybox
 
 Replace the panorama_image.png found in the skybox folder. Make sure it is converted into a panorama before replacing the image.
+
+## How to toggle VR
+
+You change 
+```
+--xr-mode on
+```
+to
+```
+--xr-mode off
+```
+in the godot launch options (found in lines 38 and 13 of change-videos.ps1 also found in lines 14 and 42 of change-videos.bash)

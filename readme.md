@@ -1,6 +1,7 @@
 # VRtheater
 
-this is a little project I was working on for 2 days to teach me some stuff about godot 4
+this is a little project I was working on for 2 days to teach me some stuff about godot 4  
+fun fact: I started making this during [LCOLONQ's](https://twitch.tv/lcolonq) stream.
 
 ## PREREQUISITES
 

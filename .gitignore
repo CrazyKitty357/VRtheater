@@ -1,2 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
+video.ogv
+video.webm
+video-url.txt
+change-video.ps1
+change-video.bash

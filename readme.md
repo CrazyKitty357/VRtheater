@@ -21,7 +21,7 @@ F, F11, Alt+Enter = Fullscreen
 
 Just run the included change-video.ps1(windows) or change-video.bash(linux)
 
-**!IMPORTANT!** MAKE SURE YOU CHANGE THE SCRIPT TO INCLUDE YOUR GODOT 4 INSTALL OR THE CODE WILL NOT WORK. 
+**!IMPORTANT!** *(windows only)* MAKE SURE YOU CHANGE THE SCRIPT TO INCLUDE YOUR GODOT 4 INSTALL OR THE CODE WILL NOT WORK. 
 
 ## How to change the skybox
 

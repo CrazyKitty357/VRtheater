@@ -14,6 +14,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfary"]
 resource_local_to_scene = true
 transparency = 1
+depth_draw_mode = 1
 diffuse_mode = 3
 specular_mode = 1
 albedo_texture = SubResource("ViewportTexture_b77i4")
@@ -22,7 +23,7 @@ albedo_texture = SubResource("ViewportTexture_b77i4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajp5l"]
 transparency = 1
-albedo_color = Color(0.764706, 0.764706, 0.764706, 0.00784314)
+albedo_color = Color(0, 0, 0, 0.756863)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eiij5"]
 panorama = ExtResource("3_d5pqa")

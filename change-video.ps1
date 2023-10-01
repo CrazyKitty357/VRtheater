@@ -1,5 +1,5 @@
-$GodotFolder = "F:\Programs\Godot_v4.1.1-stable_mono_win64"
-$GodotEXE = "Godot.exe"
+$GodotFolder = "YOUR_FOLDER_HERE"
+$GodotEXE = "YOUR_GODOT_EXE"
 $oldURL = Get-Content "video-url.txt" -ErrorAction SilentlyContinue
 if ($null -eq $oldURL) {
     $oldURL = "[N/A]"

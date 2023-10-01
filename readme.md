@@ -11,11 +11,20 @@ a pc vr headset (***optional***) | [Valve Index](https://store.steampowered.com/
 
 ## Controls
 **Notice**: VR controls are not implemented  
-Space = Pause  
-Space *while paused* = Resume  
-R *while paused* = Stop video (video starts again after unpausing)  
+### Keyboard  
+Space = Pause/Unpause Video  
 R = Restart Video  
+esc = Exit Application  
 F, F11, Alt+Enter = Fullscreen
+
+### Controller
+A = Pause/Unpause Video  
+B = Restart Video  
+Start/Plus = Exit Application  
+Select/Back/Minus = Toggle Fullscreen
+
+***Unintended control bug I will keep***  
+If you pause and then restart the video the video player will dissappear.
 
 ## How to change video
 

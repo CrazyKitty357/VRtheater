@@ -37,4 +37,4 @@ to
 ```
 --xr-mode off
 ```
-in the godot launch options (found in lines 38 and 13 of change-videos.ps1 also found in lines 14 and 42 of change-videos.bash
+in the godot launch options (found in lines 38 and 13 of change-videos.ps1 also found in lines 14 and 42 of change-videos.bash)

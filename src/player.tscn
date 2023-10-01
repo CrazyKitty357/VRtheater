@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgapcvb70u3fq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o6w70"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g36jd"]
+resource_name = "left_hand"
+albedo_color = Color(0, 0.643137, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ee7q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spwp7"]
+resource_name = "right_hand"
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="player" type="Node3D"]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="XRController3D_L" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D_L"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_o6w70")
+surface_material_override/0 = SubResource("StandardMaterial3D_g36jd")
+
+[node name="XRController3D_R" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D_R"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_4ee7q")
+surface_material_override/0 = SubResource("StandardMaterial3D_spwp7")

@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=3 uid="uid://didgwncaow552"]
+
+[ext_resource type="Script" path="res://src/world.gd" id="1_0vtab"]
+[ext_resource type="PackedScene" uid="uid://bgapcvb70u3fq" path="res://src/player.tscn" id="1_t0gk1"]
+[ext_resource type="Texture2D" uid="uid://buk5x8py7o3xc" path="res://skybox/panorama_image.png" id="3_d5pqa"]
+[ext_resource type="VideoStream" path="res://video.ogv" id="4_yeafa"]
+[ext_resource type="Script" path="res://src/VideoStreamPlayer.gd" id="5_4dfbs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ic0ex"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_b77i4"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfary"]
+resource_local_to_scene = true
+transparency = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = SubResource("ViewportTexture_b77i4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mx42b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajp5l"]
+transparency = 1
+albedo_color = Color(0.764706, 0.764706, 0.764706, 0.00784314)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eiij5"]
+panorama = ExtResource("3_d5pqa")
+
+[sub_resource type="Sky" id="Sky_x6x7x"]
+sky_material = SubResource("PanoramaSkyMaterial_eiij5")
+
+[sub_resource type="Environment" id="Environment_yq4ln"]
+background_mode = 2
+background_color = Color(0.133333, 0.6, 0.741176, 1)
+background_energy_multiplier = 1.05
+sky = SubResource("Sky_x6x7x")
+
+[node name="world" type="Node3D"]
+script = ExtResource("1_0vtab")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.990581, -0.0513997, 0.126912, 3.12319e-09, 0.92687, 0.375383, -0.136926, -0.371848, 0.91814, 0, 1.00914, 1.01434)
+
+[node name="video" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.91555e-08, -0.667, 0, 0.667, -2.91555e-08, 0, 0.777654, -1.787)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_ic0ex")
+surface_material_override/0 = SubResource("StandardMaterial3D_dfary")
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("PlaneMesh_mx42b")
+surface_material_override/0 = SubResource("StandardMaterial3D_ajp5l")
+
+[node name="player" parent="." instance=ExtResource("1_t0gk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0511025, 0)
+
+[node name="VR Error" type="RichTextLabel" parent="."]
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 218.0
+offset_bottom = 71.0
+bbcode_enabled = true
+text = "[b]Error 404[/b]: VR Not Found"
+fit_content = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yq4ln")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1280, 720)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport/SubViewportContainer"]
+layout_mode = 2
+stream = ExtResource("4_yeafa")
+autoplay = true
+script = ExtResource("5_4dfbs")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewport/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(2, 2)
+render_target_update_mode = 4
